@@ -1,0 +1,26 @@
+:root {
+  --general-font: 'Montserrat', sans-serif;
+  --secondary-font: 'Roboto', sans-serif;
+  --white-color: #fff;
+  --accent-color: #ff4e50;
+  --decription-color: #666666;
+}
+
+/* Брейкпоинты
+Desktop: 1440px 700px
+Tablet: 768px 700px
+Mobile: 320px 540px */
+
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
