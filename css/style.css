@@ -27,7 +27,6 @@ img {
 }
 
 .container {
-  max-width: 1440px;
   margin-right: auto;
   margin-left: auto;
   padding-left: 20px;
@@ -115,7 +114,7 @@ img {
 .user-register:hover,
 .user-register:focus {
   background-color: var(--accent-color);
-  border: none;
+  border: 2px solid transparent;
 }
 
 .hero {
@@ -168,7 +167,26 @@ img {
   transform: scale(1.1);
 }
 
+/* @media screen and (max-width: 767px) {
+  .header {
+    position: relative;
+  }
+
+  .user-nav {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+  }
+} */
+
 /* MAIN */
+
+.partner-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 
 .partner-title {
   all: unset;
@@ -178,8 +196,6 @@ img {
   color: var(--partner-color);
   font-weight: 700;
   margin-bottom: 16px;
-  display: flex;
-  justify-content: center;
   text-align: center;
   padding-right: 20px;
   padding-left: 20px;
@@ -188,15 +204,11 @@ img {
 .list {
   all: unset;
   list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   padding-right: 40px;
   padding-left: 40px;
 }
 
 .list-item {
-  position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -204,11 +216,20 @@ img {
   margin-bottom: 28px;
 }
 
-.list-item:last-child {
-  margin-bottom: 0;
+@media screen and (max-width: 767px) {
+  .list-item:last-child {
+    margin-bottom: 0;
+  }
 }
 
-.partner-link1::before {
+/* НУЖНО ЧЕКНУТЬ ЭТО ПОЛОТНО */
+/* НАЧАЛО ИКОНОК */
+
+.list-item .overlay-tv {
+  position: relative;
+}
+
+.list-item .overlay-tv::before {
   display: inline-block;
   content: '';
   height: 30px;
@@ -216,13 +237,102 @@ img {
   background-color: var(--accent-color);
   border: 4px solid var(--white-color);
   border-radius: 50%;
+  background-image: url(../images/icons/tv-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+  transform: scale(1);
+  transition: transform 250ms linear;
+}
+
+.overlay-tv:hover::before,
+.overlay-tv:focus::before {
+  transform: scale(1.05);
+}
+
+.list-item .overlay-flask {
+  position: relative;
+}
+
+.list-item .overlay-flask::before {
+  display: inline-block;
+  content: '';
+  height: 30px;
+  width: 30px;
+  background-color: #ffa507;
+  border: 4px solid var(--white-color);
+  border-radius: 50%;
+  background-image: url(../images/icons/flask-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+  transform: scale(1);
+  transition: transform 250ms linear;
+}
+
+.overlay-flask:hover::before,
+.overlay-flask:focus::before {
+  transform: scale(1.05);
+}
+
+.list-item .overlay-cup {
+  position: relative;
+}
+
+.list-item .overlay-cup::before {
+  display: inline-block;
+  content: '';
+  height: 30px;
+  width: 30px;
+  background-color: #1cd7ad;
+  border: 4px solid var(--white-color);
+  border-radius: 50%;
+  background-image: url(../images/icons/cup-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+  transform: scale(1);
+  transition: transform 250ms linear;
+}
+
+.overlay-cup:hover::before,
+.overlay-cup:focus::before {
+  transform: scale(1.05);
+}
+
+.list-item .overlay-telegram {
+  position: relative;
+}
+
+.list-item .overlay-telegram::before {
+  display: inline-block;
+  content: '';
+  height: 30px;
+  width: 30px;
+  background-color: #4e73db;
+  border: 4px solid var(--white-color);
+  border-radius: 50%;
   background-image: url(../images/icons/telegram-icon.svg);
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
-  top: 40%;
-  left: 60%;
+  right: 0;
+  bottom: 10%;
+  transform: scale(1);
+  transition: transform 250ms linear;
 }
+
+.overlay-telegram:hover::before,
+.overlay-telegram:focus::before {
+  transform: scale(1.05);
+}
+/* КОНЕЦ ИКОНОК */
 
 .partner-photo {
   margin-bottom: 20px;
@@ -249,9 +359,7 @@ img {
 }
 
 .partner-link {
-  all: unset;
-  display: flex;
-  justify-content: center;
+  text-decoration: none;
   padding: 12px 46px;
   border: 2px solid var(--accent-color);
   border-radius: 20px;
@@ -265,12 +373,110 @@ img {
   cursor: pointer;
   margin-top: 30px;
   margin-bottom: 50px;
+  text-align: center;
+  min-width: 280px;
 }
 
 .partner-link:hover,
 .partner-link:focus {
   color: var(--white-color);
   background-color: var(--accent-color);
-  border: none;
+  border: 2px solid transparent;
   transform: scale(1.1);
+}
+
+/* TABLET */
+/* BANNER */
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 530px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url(../images/background-tablet.jpg);
+    height: 700px;
+  }
+
+  .hero-title {
+    font-size: 52px;
+    margin-bottom: 40px;
+  }
+
+  .hero-description {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  /* MAIN  */
+
+  .partner-title {
+    margin-bottom: 32px;
+  }
+
+  .list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .list-item {
+    margin-right: 20px;
+    flex-basis: calc(50% - 10px);
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1169px) {
+    .list-item:nth-child(2n) {
+      margin-right: 0;
+    }
+
+    .list-item:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* DESCKTOP */
+/* BANNER */
+
+@media screen and (min-width: 1170px) {
+  .container {
+    width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url(../images/background-desktop.jpg);
+    height: 700px;
+  }
+
+  /* MAIN */
+
+  .list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .list-item {
+    flex-basis: calc(25% - 15px);
+  }
+
+  .list-item:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+
+  .list-item:nth-child(4n) {
+    margin-right: 0;
+  }
 }
