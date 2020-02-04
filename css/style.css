@@ -182,14 +182,12 @@ img {
 /* MAIN */
 
 .partner-section {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  margin-bottom: 50px;
 }
 
 .partner-title {
   all: unset;
+  display: block;
   font-family: var(--general-font);
   font-size: 22px;
   line-height: 1.2;
@@ -197,8 +195,6 @@ img {
   font-weight: 700;
   margin-bottom: 16px;
   text-align: center;
-  padding-right: 20px;
-  padding-left: 20px;
 }
 
 .list {
@@ -206,6 +202,7 @@ img {
   list-style: none;
   padding-right: 40px;
   padding-left: 40px;
+  margin-bottom: 30px;
 }
 
 .list-item {
@@ -222,116 +219,53 @@ img {
   }
 }
 
-/* НУЖНО ЧЕКНУТЬ ЭТО ПОЛОТНО */
 /* НАЧАЛО ИКОНОК */
 
-.list-item .overlay-tv {
+.overlay {
   position: relative;
 }
 
-.list-item .overlay-tv::before {
+.overlay::before {
   display: inline-block;
   content: '';
   height: 30px;
   width: 30px;
+  border: 4px solid var(--white-color);
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+  transform: scale(1);
+  transition: transform 250ms linear;
+}
+
+.overlay:hover::before,
+.overlay:focus::before {
+  transform: scale(1.05);
+}
+
+.overlay.icon-tv::before {
   background-color: var(--accent-color);
-  border: 4px solid var(--white-color);
-  border-radius: 50%;
   background-image: url(../images/icons/tv-icon.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  right: 0;
-  bottom: 10%;
-  transform: scale(1);
-  transition: transform 250ms linear;
 }
 
-.overlay-tv:hover::before,
-.overlay-tv:focus::before {
-  transform: scale(1.05);
-}
-
-.list-item .overlay-flask {
-  position: relative;
-}
-
-.list-item .overlay-flask::before {
-  display: inline-block;
-  content: '';
-  height: 30px;
-  width: 30px;
-  background-color: #ffa507;
-  border: 4px solid var(--white-color);
-  border-radius: 50%;
+.overlay.icon-flask::before {
   background-image: url(../images/icons/flask-icon.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  right: 0;
-  bottom: 10%;
-  transform: scale(1);
-  transition: transform 250ms linear;
+  background-color: #ffa507;
 }
 
-.overlay-flask:hover::before,
-.overlay-flask:focus::before {
-  transform: scale(1.05);
-}
-
-.list-item .overlay-cup {
-  position: relative;
-}
-
-.list-item .overlay-cup::before {
-  display: inline-block;
-  content: '';
-  height: 30px;
-  width: 30px;
-  background-color: #1cd7ad;
-  border: 4px solid var(--white-color);
-  border-radius: 50%;
+.overlay.icon-cup::before {
   background-image: url(../images/icons/cup-icon.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  right: 0;
-  bottom: 10%;
-  transform: scale(1);
-  transition: transform 250ms linear;
+  background-color: #1cd7ad;
 }
 
-.overlay-cup:hover::before,
-.overlay-cup:focus::before {
-  transform: scale(1.05);
-}
-
-.list-item .overlay-telegram {
-  position: relative;
-}
-
-.list-item .overlay-telegram::before {
-  display: inline-block;
-  content: '';
-  height: 30px;
-  width: 30px;
-  background-color: #4e73db;
-  border: 4px solid var(--white-color);
-  border-radius: 50%;
+.overlay.icon-telegram::before {
   background-image: url(../images/icons/telegram-icon.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  right: 0;
-  bottom: 10%;
-  transform: scale(1);
-  transition: transform 250ms linear;
+  background-color: #4e73db;
 }
 
-.overlay-telegram:hover::before,
-.overlay-telegram:focus::before {
-  transform: scale(1.05);
-}
 /* КОНЕЦ ИКОНОК */
 
 .partner-photo {
@@ -359,6 +293,8 @@ img {
 }
 
 .partner-link {
+  display: block;
+  margin: 0 auto;
   text-decoration: none;
   padding: 12px 46px;
   border: 2px solid var(--accent-color);
@@ -371,10 +307,8 @@ img {
   transform: scale(1);
   transition: transform 250ms linear;
   cursor: pointer;
-  margin-top: 30px;
-  margin-bottom: 50px;
   text-align: center;
-  min-width: 280px;
+  width: 280px;
 }
 
 .partner-link:hover,
@@ -397,6 +331,12 @@ img {
     padding-right: 20px;
   }
 
+  .header-container {
+    width: 780px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       url(../images/background-tablet.jpg);
@@ -409,9 +349,6 @@ img {
   .page-header {
     margin-bottom: 160px;
     padding-top: 48px;
-    width: 780px;
-    padding-left: 20px;
-    padding-right: 20px;
   }
 
   .logo {
