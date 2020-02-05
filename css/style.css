@@ -47,11 +47,11 @@ img {
 .page-header {
   display: flex;
   justify-content: center;
-  align-items: baseline;
+  /* align-items: baseline; */
 }
 
 .logo {
-  all: unset;
+  text-decoration: none;
   text-transform: uppercase;
   font-family: var(--general-font);
   font-size: 20px;
@@ -64,7 +64,8 @@ img {
 }
 
 .user-nav {
-  all: unset;
+  margin: 0;
+  padding: 0;
   list-style: none;
   display: flex;
   justify-content: center;
@@ -413,7 +414,6 @@ img {
   .header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       url(../images/background-desktop.jpg);
-    height: 700px;
   }
 
   /* MAIN */
