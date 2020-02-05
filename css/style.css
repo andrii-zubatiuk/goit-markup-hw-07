@@ -47,7 +47,7 @@ img {
 .page-header {
   display: flex;
   justify-content: center;
-  /* align-items: baseline; */
+  align-items: baseline;
 }
 
 .logo {
@@ -333,7 +333,7 @@ img {
   }
 
   .header-container {
-    width: 780px;
+    width: 760px;
     padding-left: 20px;
     padding-right: 20px;
   }
