@@ -82,11 +82,15 @@ img {
   font-weight: 700;
   cursor: pointer;
   padding: 10px 18px;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  margin-right: 10px;
 }
 
 .user-enter:hover,
 .user-enter:focus {
   color: var(--accent-color);
+  border: 2px solid var(--accent-color);
 }
 
 .user-register {
